@@ -1,0 +1,110 @@
+/* Βασικά Χρώματα (Dark Mode με Μωβ πινελιές) */
+:root {
+  --bg-color: #0d1117; /* Σκοτεινό φόντο τύπου GitHub Dark */
+  --text-main: #c9d1d9; /* Καθαρό ανοιχτό γκρι για εύκολο διάβασμα */
+  --text-muted: #8b949e; /* Πιο σκούρο γκρι για δευτερεύοντες τίτλους */
+  --accent: #8b5cf6; /* Το "Hollow Purple" χρώμα */
+  --accent-glow: rgba(139, 92, 246, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  /* Μια πολύ διακριτική κλίση στο φόντο - ΔΙΟΡΘΩΘΗΚΕ ΤΟ RADIAL */
+  background-image: radial-gradient(circle at 50% 0%, #161b22 0%, #0d1117 70%);
+}
+
+.container {
+  max-width: 650px;
+  padding: 2rem;
+}
+
+.greeting {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  color: var(--text-muted);
+}
+
+/* Flexbox για τα κουμπιά */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid var(--text-muted);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Αυτό κάνει την κίνηση ομαλή */
+}
+
+/* Hover Effect: Το κουμπί σηκώνεται και βγάζει μωβ "αύρα" */
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+/* --------------------------------------
+   Το Animation "Αφύπνισης" (Fade-in-Up)
+   -------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  /* 1 δευτερόλεπτο διάρκεια, με ομαλό φρενάρισμα στο τέλος */
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
