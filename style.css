@@ -97,6 +97,11 @@ h1 {
   opacity: 0.85;
 }
 
+.bio strong {
+  color: #ffffff; /* Κάνει τα keywords ολόλευκα */
+  font-weight: 600;
+}
+
 /* Flexbox για τα κουμπιά */
 .links {
   display: flex;
