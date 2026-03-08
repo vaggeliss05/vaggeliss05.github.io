@@ -216,29 +216,41 @@ h1 {
    ========================================= */
 @media (max-width: 768px) {
   .container {
-    padding: 2rem 1.5rem; /* Μικραίνουμε τα κενά στο κουτί */
-    margin: 1rem; /* Βάζουμε λίγο περιθώριο δεξιά-αριστερά */
+    padding: 2.5rem 1.5rem; /* Δίνουμε λίγο αέρα στο κουτί */
+    margin: 1rem; 
+  }
+
+  /* Φτιάχνουμε το Welcome να μην "καβαλάει" το όνομα */
+  .greeting {
+    font-size: 3rem; 
+    margin-top: -1rem; /* Χαλαρώνουμε το αρνητικό περιθώριο */
+    margin-bottom: 0.5rem; 
   }
   
+  /* Φτιάχνουμε το όνομα να έχει σωστό κενό αν σπάσει σε 2 γραμμές */
   h1 {
-    font-size: 2.5rem; /* Μικραίνουμε το όνομα για να χωράει */
+    font-size: 2.5rem; 
+    line-height: 1.1; /* Δίνει χώρο ανάμεσα στο Vaggelis και το Milikos */
+    margin-bottom: 0.5rem;
   }
   
   .title {
     font-size: 1.1rem;
+    margin-bottom: 1.5rem; /* Αέρας ανάμεσα στον τίτλο και το βιογραφικό */
   }
   
   .bio {
     font-size: 1rem;
+    margin-bottom: 2rem; /* Αέρας ανάμεσα στο βιογραφικό και τα κουμπιά */
   }
   
   .links {
-    flex-direction: column; /* Τα κουμπιά μπαίνουν το ένα κάτω από το άλλο στο κινητό */
+    flex-direction: column; 
     width: 100%;
   }
   
   .btn {
-    width: 100%; /* Τα κουμπιά πιάνουν όλο το πλάτος για εύκολο πάτημα με το δάχτυλο */
+    width: 100%; 
     justify-content: center;
   }
 }
