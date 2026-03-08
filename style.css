@@ -50,27 +50,40 @@ body {
   border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
+/* =========================================
+   The New Elegant Greeting (Welcome)
+   ========================================= */
 .greeting {
-  font-family: 'Caveat', cursive;
-  color: #ffffff;
+  /* New Font, matched to image_21.png */
+  font-family: 'Sacramento', cursive;
+  color: #d1e8ff; /* Light metallic silver-blue */
   font-size: 3.8rem;
-  font-weight: 700;
   
-  /* Σπρώχνει το κείμενο αισθητά πιο πάνω */
+  /* Reduced Weight & Added Transparency */
+  font-weight: 400; /* This font is inherently very light and thin */
+  opacity: 0.7; /* User wanted transparency */
+  
+  /* Retained high position */
   margin-top: -2.5rem; 
   margin-bottom: -0.5rem;
   letter-spacing: 2px;
   
-  /* Ρυθμίσεις για το Animation Γραψίματος */
+  /* Soft, luminous cyan glow, like ML title */
+  text-shadow: 0 0 10px rgba(143, 211, 244, 0.4); 
+  
+  /* Retained Typing Animation CSS */
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   vertical-align: bottom;
-  
-  /* Ξεκινάει κρυμμένο και ξεκινάει το animation με μικρή καθυστέρηση */
   max-width: 0;
-  opacity: 0;
   animation: writeText 1.5s cubic-bezier(0.42, 0, 0.58, 1) 0.5s forwards; 
+}
+
+/* Updated Keyframes to keep the final transparent state */
+@keyframes writeText {
+  0% { max-width: 0; opacity: 0; }
+  100% { max-width: 300px; opacity: 0.7; } /* Animate to desired transparency */
 }
 
 /* Η μαγεία του animation που "γράφει" τη λέξη */
