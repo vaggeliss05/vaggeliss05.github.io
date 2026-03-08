@@ -52,13 +52,32 @@ body {
 
 .greeting {
   font-family: 'Caveat', cursive;
-  color: #ffffff; /* Pure white for maximum clarity */
+  color: #ffffff;
   font-size: 3.8rem;
-  font-weight: 700; /* Boldest weight available for Caveat */
+  font-weight: 700;
+  
+  /* Σπρώχνει το κείμενο αισθητά πιο πάνω */
+  margin-top: -2.5rem; 
   margin-bottom: -0.5rem;
   letter-spacing: 2px;
-  opacity: 1; /* Removes the washed-out transparency */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow to make it pop */
+  
+  /* Ρυθμίσεις για το Animation Γραψίματος */
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  
+  /* Ξεκινάει κρυμμένο και ξεκινάει το animation με μικρή καθυστέρηση */
+  max-width: 0;
+  opacity: 0;
+  animation: writeText 1.5s cubic-bezier(0.42, 0, 0.58, 1) 0.5s forwards; 
+}
+
+/* Η μαγεία του animation που "γράφει" τη λέξη */
+@keyframes writeText {
+  0% { max-width: 0; opacity: 0; }
+  10% { opacity: 1; }
+  100% { max-width: 300px; opacity: 1; } /* Ανοίγει σταδιακά για να φανεί όλο */
 }
 
 /* Το Live Gradient Name */
@@ -86,10 +105,14 @@ h1 {
  }
 
 .title {
-  font-size: 1.3rem;
-  color: var(--text-muted);
-  font-weight: 400;
+  font-size: 1.35rem; /* Ελάχιστα πιο μεγάλο για να έχει κύρος */
+  font-weight: 500;
   margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+  
+  /* Το νέο Design: Κυανό χρώμα με AI Glow */
+  color: #8fd3f4; 
+  text-shadow: 0 0 15px rgba(143, 211, 244, 0.4);
 }
 
 .bio {
