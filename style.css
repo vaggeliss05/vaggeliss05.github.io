@@ -291,6 +291,10 @@ h1 {
   .footer {
     margin-top: 1.5rem;
     padding-bottom: 20px;
+    font-size: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
   }
   
 }
