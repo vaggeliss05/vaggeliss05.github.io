@@ -51,11 +51,13 @@ body {
 }
 
 .greeting {
-  font-family: 'Caveat', cursive; /* Η καλλιτεχνική, ανθρώπινη πινελιά */
-  color: var(--text-main); /* Πιο φωτεινό για να διαβάζεται */
-  font-size: 2.2rem; /* Αρκετά μεγάλο για να τραβάει το μάτι */
-  margin-bottom: 0.5rem;
-  text-transform: lowercase; /* Το κλασικό Apple στιλ */
+  font-family: 'Caveat', cursive;
+  color: var(--text-main);
+  font-size: 3.8rem; /* Τεράστια αύξηση γιατί η Caveat είναι μικροσκοπική */
+  font-weight: 500;
+  margin-bottom: -0.5rem; /* Το τραβάμε λίγο πιο κοντά στο h1 (το όνομά σου) */
+  letter-spacing: 1px;
+  opacity: 0.9; /* Ελαφρώς πιο γλυκό στο μάτι */
 }
 
 /* Το Live Gradient Name */
