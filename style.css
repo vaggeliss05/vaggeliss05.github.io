@@ -33,8 +33,8 @@ body {
 /* Glassmorphism  Container με αντιδραστικό Hover*/
 .container {
   margin: auto; /* <--- Η ΠΡΟΣΘΗΚΗ ΜΑΣ */
-  max-width: 650px;
-  padding: 3rem 2rem;
+  max-width: 800px; /* <--- ΑΛΛΑΓΗ : Δίνουμε άπλα στο κουτί */
+  padding: 3rem 2.5rem; /* <--- ΠΡΟΑΙΡΕΤΙΚΟ: Λίγο μεγαλύτερο padding δεξιά-αριστερά */
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
@@ -150,17 +150,18 @@ h1 {
 }
 
 .btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   background: transparent;
   color: var(--text-main);
   text-decoration: none;
-  padding: 0.8rem 1.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 0.95rem;
   transition: all 0.3s ease; /* Αυτό κάνει την κίνηση ομαλή */
+  white-space: nowrap; /* <--- ΑΛΛΑΓΗ: Απαγορεύει το σπάσιμο γραμμής (π.χ. στο Resume / CV) */
 }
 
 /* Hover Effect: Το κουμπί σηκώνεται και βγάζει μωβ "αύρα" */
