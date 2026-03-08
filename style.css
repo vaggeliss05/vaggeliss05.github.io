@@ -52,12 +52,13 @@ body {
 
 .greeting {
   font-family: 'Caveat', cursive;
-  color: var(--text-main);
-  font-size: 3.8rem; /* Τεράστια αύξηση γιατί η Caveat είναι μικροσκοπική */
-  font-weight: 500;
-  margin-bottom: 1.5rem; /* Το τραβάμε λίγο πιο μακριά από το h1 (το όνομά σου) */
-  letter-spacing: 1px;
-  opacity: 0.9; /* Ελαφρώς πιο γλυκό στο μάτι */
+  color: #ffffff; /* Pure white for maximum clarity */
+  font-size: 3.8rem;
+  font-weight: 700; /* Boldest weight available for Caveat */
+  margin-bottom: -0.5rem;
+  letter-spacing: 2px;
+  opacity: 1; /* Removes the washed-out transparency */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow to make it pop */
 }
 
 /* Το Live Gradient Name */
