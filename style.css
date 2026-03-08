@@ -93,7 +93,8 @@ h1 {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 3rem;
-  color: #a1aab3;
+  color: var(--text-main);
+  opacity: 0.85;
 }
 
 /* Flexbox για τα κουμπιά */
