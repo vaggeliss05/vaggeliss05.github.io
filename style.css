@@ -51,11 +51,11 @@ body {
 }
 
 .greeting {
-  color: var(--text-muted);
-  font-weight: 600;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  margin-bottom: 1.5rem;
+  font-family: 'Caveat', cursive; /* Η καλλιτεχνική, ανθρώπινη πινελιά */
+  color: var(--text-main); /* Πιο φωτεινό για να διαβάζεται */
+  font-size: 2.2rem; /* Αρκετά μεγάλο για να τραβάει το μάτι */
+  margin-bottom: 0.5rem;
+  text-transform: lowercase; /* Το κλασικό Apple στιλ */
 }
 
 /* Το Live Gradient Name */
