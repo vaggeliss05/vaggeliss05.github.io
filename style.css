@@ -127,6 +127,19 @@ h1 {
   box-shadow: 0 8px 20px var(--btn-glow);
 }
 
+/* Το Κύριο Κουμπί (Για το Βιογραφικό) - Ξεχωρίζει οπτικά */
+.btn-primary {
+  background-color: var(--btn-hover); /* Γεμάτο μπλε χρώμα */
+  color: #ffffff;
+  border-color: var(--btn-hover);
+}
+
+/* Όταν κάνεις hover στο CV, γίνεται διάφανο (αντίστροφο εφέ) */
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--btn-hover);
+}
+
 /* --------------------------------------
    Το Animation "Αφύπνισης" (Fade-in-Up)
    -------------------------------------- */
