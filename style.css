@@ -4,7 +4,7 @@
   --text-main: #c9d1d9; /* Καθαρό ανοιχτό γκρι για εύκολο διάβασμα */
   --text-muted: #8b949e; /* Πιο σκούρο γκρι για δευτερεύοντες τίτλους */
   --btn-hover: #0984e3; /* Σκούρο/Ηλεκτρικό Μπλε για τα κουμπιά */
-  --btn-glow: rgba(9, 132, 227, 0.4);
+  --btn-glow: rgba(9, 132, 227, 0.5);
 }
 
 * {
@@ -23,10 +23,11 @@ body {
   min-height: 100vh;
   text-align: center;
   overflow-x: hidden;
- /* Το Μπλε (Αριστερά) και Κόκκινο (Δεξιά) φως του Gojo */
+ /* TUNING: Ανεβάσαμε την ένταση του Μπλε (0.25) και του Κόκκινου (0.22)
+     και τα φέραμε πιο μέσα (0% και 100% αντί για -10% και 110%) */
   background-image: 
-    radial-gradient(circle at -10% 50%, rgba(0, 195, 255, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 110% 50%, rgba(255, 0, 64, 0.1) 0%, transparent 40%);
+    radial-gradient(circle at 0% 50%, rgba(0, 195, 255, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 100% 50%, rgba(255, 0, 64, 0.22) 0%, transparent 55%);
 }
 
 /* Glassmorphism  Container με αντιδραστικό Hover*/
@@ -34,17 +35,19 @@ body {
   max-width: 650px;
   padding: 3rem 2rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.5s  ease, box-shadow 0.5s ease;
 }
 
-/* Η "Σύντηξη": Μικρή ανύψωση και αχνή μωβ λάμψη (Hollow Purple) */
+/* TUNING: Η "Σύντηξη" - Πολύ πιο καθαρό Μωβ Glow και μωβ περίγραμμα */
 .container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px  40px rgba(0, 0, 0, 0.5),  0 0 30px  rgba(139, 92, 246, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Δυνατή μαύρη σκιά για βάθος + Έντονη Μωβ λάμψη από πίσω */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 50px rgba(139, 92, 246, 0.25);
+  /* Το περίγραμμα γίνεται διακριτικά μωβ */
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .greeting {
