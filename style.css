@@ -287,4 +287,10 @@ h1 {
     width: 100%; 
     justify-content: center;
   }
+  /* Μαζεύουμε το footer στο κινητό για να μην θέλει υπερβολικό scroll */
+  .footer {
+    margin-top: 1.5rem;
+    padding-bottom: 20px;
+  }
+  
 }
