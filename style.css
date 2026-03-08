@@ -146,7 +146,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .btn {
@@ -175,18 +175,40 @@ h1 {
    Primary Call to Action (Resume / CV)
    ========================================= */
 .btn-primary {
-  background: var(--hover-color); /* Γεμάτο Κυανό χρώμα */
-  color: #050505; /* Σκούρα γράμματα για μέγιστη αντίθεση */
-  border: 1px solid var(--hover-color);
-  font-weight: 600;
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); /* Διακριτική λάμψη */
+  /* Επαναφορά σε transparent style */
+  background: transparent;
+  color: #ffffff; /* Ή var(--text-muted) αν το θες λίγο πιο απαλό */
+  border: 1px solid var(--text-muted); 
+  font-weight: 500;
+  box-shadow: none; /* Αφαιρούμε το αρχικό shadow */
 }
 
 .btn-primary:hover {
   background: transparent;
-  color: var(--hover-color);
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+  color: #ffffff;
+  border-color: #ffffff;
   transform: translateY(-3px);
+
+  /* Ενεργοποίση του animation */
+  animation: awakenedGlow 2.5s infinite alternate;
+}
+
+@keyframes awakenedGlow {
+  0% {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    color: var(--hover-color); /* Το κυανό χρώμα */
+    border-color: var(--hover-color);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+  }
+  100% {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* --------------------------------------
