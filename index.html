@@ -45,7 +45,26 @@
         </footer>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        const yearElement = document.getElementById("year");
+        yearElement.textContent = new Date().getFullYear();
+
+        async function updateYear() {
+            try {
+                const response = await fetch("https://www.timeapi.io/api/v1/timezone/zone?timeZone=Europe%2FAthens");
+
+                if(!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                const data = await response.json();
+                const serverDate = new Date(data.local_time);
+                const serverYear = serverDate.getFullYear();
+                yearElement.textContent = serverYear;
+
+            } catch (error) {
+                console.error("Failed to get server time.Falling back to system clock:", error);
+            }
+        }
+        updateYear();
     </script>
 </body>
 </html>
