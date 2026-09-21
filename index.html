@@ -45,29 +45,34 @@
         </footer>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        //possible further implementation using an API call
-        /*
         const yearElement = document.getElementById("year");
         yearElement.textContent = new Date().getFullYear();
-
-        async function updateYear() {
+        
+        async function fetchServerYear() {
             try {
-                const response = await fetch("https://worldtimeapi.org/api/timezone/Europe/Athens");
+                const response = await fetch(window.location.href, {
+                    method: 'HEAD',
+                    cache: 'no-store'
+                });
 
-                if(!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
+                if(response.ok) {
+                    const serverDateHeader = response.headers.get('Date');
+                    if(serverDateHeader) {
+                        const serverYear = new Date(serverDateHeader).getFullYear();
+
+                        if(!isNaN(serverYear) && serverYear !== currentLocalYear) {
+                            yearElement.textContent = serverYear;
+                        }
+                    }
+                    
                 }
-                const data = await response.json();
-                const serverDate = new Date(data.datetime);
-                const serverYear = serverDate.getFullYear();
-                yearElement.textContent = serverYear;
+                
 
             } catch (error) {
                 console.error("Failed to get server time.Falling back to system clock:", error);
             }
         }
-        updateYear(); */
+        fetchServerYear();
     </script>
 </body>
 </html>
