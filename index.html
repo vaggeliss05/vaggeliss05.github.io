@@ -46,6 +46,7 @@
 
     <script>
         const yearElement = document.getElementById("year");
+        const currentLocalYear = new Date().getFullYear();
         yearElement.textContent = new Date().getFullYear();
         
         async function fetchServerYear() {
